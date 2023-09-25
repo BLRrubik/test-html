@@ -9,13 +9,16 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
     <script>
-        window.Telegram.WebApp.MainButton
+        let tg = window.Telegram.WebApp;
+        tg.MainButton.enable()
+
+        tg.WebApp.MainButton
             .setText('CLOSE WEBVIEW')
             .show()
             .onClick(function(){ webviewClose(); });
 
         function webviewClose() {
-            window.Telegram.WebApp.sendData(JSON.stringify({"click": true}))
+            tg.WebApp.sendData(JSON.stringify({"click": true}))
         }
     </script>
 </body>
