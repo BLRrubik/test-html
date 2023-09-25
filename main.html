@@ -7,5 +7,16 @@
 <body>
     <a href="https://digital.etu.ru/attendance/student"> Authorize </a>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <script>
+        window.Telegram.WebApp.BackButton
+            .setText('CLOSE WEBVIEW')
+            .show()
+            .onClick(function(){ webviewClose(); });
+
+        function webviewClose() {
+            window.Telegram.WebApp.sendData(JSON.stringify({"click": true}))
+        }
+    </script>
 </body>
 </html>
